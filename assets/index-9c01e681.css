@@ -633,10 +633,10 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 .bg-hero-pattern {
-  background-image: url(assets/bg1-fbe4e5f4.jpg);
+  background-image: url(bg1-fbe4e5f4.jpg);
 }
 .bg-works-pattern {
-  background-image: url(assets/bg2-a1ba851e.png);
+  background-image: url(bg2-a1ba851e.png);
 }
 .bg-auto {
   background-size: auto;
