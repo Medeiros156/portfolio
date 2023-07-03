@@ -5,7 +5,7 @@ import { About, Contact, Hero, Navbar, Projects } from "./components";
 const App = () => {
   return (
     <BrowserRouter>
-      <div className='relative z-0 bg-black-100'>
+      <div className='relative z-10 bg-black-100'>
         <div className='bg-hero-pattern bg-auto bg-no-repeat bg-left bg-fixed'>
           <Navbar />
           <Hero />

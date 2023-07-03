@@ -20,7 +20,7 @@ module.exports = {
       },
       backgroundImage: {
         "hero-pattern": "url('/src/assets/bg1.jpg')",
-        "works-pattern": "url('/src/assets/bg2.png')",
+        "works-pattern": "url('/src/assets/bg2.webp')",
       },
     },
   },

@@ -12,10 +12,12 @@ import {
   python,
   php,
   docker,
-  carrent,
-  jobit,
-  tripguide,
   laravel,
+  Fakebets,
+  Hsternclone,
+  ReactSocial,
+  Pokedex,
+  Rentacar,
 } from "../assets";
 
 export const navLinks = [
@@ -94,109 +96,93 @@ const technologies = [
 
 const projects = [
   {
-    name: "Car Rent",
+    name: "FakeBets",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "Projeto Full-Stack, site de apostas feito com Front-end React com Inertia, Laravel como middleware utilizando breeze para auth, Back-end api-REST Nodejs com express, scraper de dados de aposta em Python e banco de dados Mysql.",
     tags: [
       {
-        name: "react",
+        name: "React",
         color: "bg-blue-500",
       },
       {
-        name: "mongodb",
+        name: "Laravel",
+        color: "bg-red-600",
+      },
+      {
+        name: "Nodejs",
         color: "bg-green-500",
       },
       {
-        name: "tailwind",
-        color: "bg-pink-500",
+        name: "Python",
+        color: "bg-blue-600",
+      },
+      {
+        name: "Mysql",
+        color: "bg-sky-600",
       },
     ],
-    image: carrent,
-    source_code_link: "https://github.com/",
+    image: Fakebets,
+    source_code_link: "https://github.com/Medeiros156/FakeBets_",
+    project_link: "https://fakebetsprod-production.up.railway.app/",
   },
   {
-    name: "Job IT",
+    name: "RentAcar",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "Projeto Front-End, site de aluguel de carros feito com React e Sass.",
     tags: [
       {
-        name: "react",
+        name: "React",
         color: "bg-blue-500",
       },
       {
-        name: "restapi",
-        color: "bg-green-500",
-      },
-      {
-        name: "scss",
-        color: "bg-pink-500",
+        name: "Sass",
+        color: "bg-pink-600",
       },
     ],
-    image: jobit,
-    source_code_link: "https://github.com/",
+    image: Rentacar,
+    source_code_link: "https://github.com/Medeiros156/rentAcar",
+    project_link: "https://medeiros156.github.io/rentAcar/",
   },
   {
-    name: "Trip Guide",
+    name: "HStern Products Display",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "Projeto em PHP de display de produtos com scraper de dados do site Hstern.com.",
     tags: [
       {
-        name: "nextjs",
-        color: "bg-blue-500",
-      },
-      {
-        name: "supabase",
-        color: "bg-green-500",
-      },
-      {
-        name: "css",
-        color: "bg-pink-500",
+        name: "PHP",
+        color: "bg-indigo-400",
       },
     ],
-    image: tripguide,
-    source_code_link: "https://github.com/",
+    image: Hsternclone,
+    source_code_link: "https://github.com/Medeiros156/HsternClone",
+    project_link: "https://hsternclone.000webhostapp.com/",
   },
   {
-    name: "Trip Guide",
+    name: "Pokedex React",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "Projecto de Pokedex feito com React e fetch de dados da pokeapi.co.",
     tags: [
       {
-        name: "nextjs",
+        name: "React",
         color: "bg-blue-500",
       },
-      {
-        name: "supabase",
-        color: "bg-green-500",
-      },
-      {
-        name: "css",
-        color: "bg-pink-500",
-      },
     ],
-    image: tripguide,
-    source_code_link: "https://github.com/",
+    image: Pokedex,
+    source_code_link: "https://github.com/Medeiros156/Pokedex",
+    project_link: "https://medeiros156.github.io/Pokedex/",
   },
   {
-    name: "Trip Guide",
-    description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+    name: "React Social",
+    description: "Rede Social em React com Dark Mode e Login.",
     tags: [
       {
-        name: "nextjs",
+        name: "React",
         color: "bg-blue-500",
       },
-      {
-        name: "supabase",
-        color: "bg-green-500",
-      },
-      {
-        name: "css",
-        color: "bg-pink-500",
-      },
     ],
-    image: tripguide,
-    source_code_link: "https://github.com/",
+    image: ReactSocial,
+    source_code_link: "https://github.com/Medeiros156/Reactsocial",
+    project_link: "https://medeiros156.github.io/Reactsocial/#/",
   },
 ];
 

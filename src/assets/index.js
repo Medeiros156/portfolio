@@ -2,26 +2,28 @@ import logo from "./logo.svg";
 import github from "./github.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
-import linkedin from "./linkedin.png";
+import linkedin from "./linkedin.webp";
 
-import html from "./tech/html.png";
-import css from "./tech/css.png";
-import docker from "./tech/docker.png";
-import mysql from "./tech/mysql.png";
-import git from "./tech/git.png";
-import javascript from "./tech/javascript.png";
-import mongodb from "./tech/mongodb.png";
-import nodejs from "./tech/nodejs.png";
-import reactjs from "./tech/reactjs.png";
-import tailwind from "./tech/tailwind.png";
-import typescript from "./tech/typescript.png";
-import laravel from "./tech/laravel.png";
-import php from "./tech/php.png";
-import python from "./tech/python.png";
+import html from "./tech/html.webp";
+import css from "./tech/css.webp";
+import docker from "./tech/docker.webp";
+import mysql from "./tech/mysql.webp";
+import git from "./tech/git.webp";
+import javascript from "./tech/javascript.webp";
+import mongodb from "./tech/mongodb.webp";
+import nodejs from "./tech/nodejs.webp";
+import reactjs from "./tech/reactjs.webp";
+import tailwind from "./tech/tailwind.webp";
+import typescript from "./tech/typescript.webp";
+import laravel from "./tech/laravel.webp";
+import php from "./tech/php.webp";
+import python from "./tech/python.webp";
 
-import carrent from "./jobit.png";
-import jobit from "./jobit.png";
-import tripguide from "./tripguide.png";
+import Fakebets from "./Fakebets.webp";
+import Hsternclone from "./Hsternclone.webp";
+import ReactSocial from "./ReactSocial.webp";
+import Pokedex from "./Pokedex.webp";
+import Rentacar from "./Rentacar.webp";
 
 export {
   logo,
@@ -43,7 +45,9 @@ export {
   laravel,
   php,
   python,
-  carrent,
-  jobit,
-  tripguide,
+  Fakebets,
+  Hsternclone,
+  ReactSocial,
+  Pokedex,
+  Rentacar,
 };

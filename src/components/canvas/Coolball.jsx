@@ -22,7 +22,7 @@ const Coolball = ({ isMobile }) => {
       <pointLight intensity={10} />
       <primitive
         object={coolball.scene}
-        scale={isMobile ? 0.08 : 0.075}
+        scale={isMobile ? 0.1 : 0.075}
         position={isMobile ? [-2.2, 0, -2.2] : [0, 0, 0]}
         rotation={[1.569, 0, 0]}
       // opacity={0.1}
@@ -37,21 +37,16 @@ const CoolballCanvas = ({ autoRotateSpeed }) => {
 
   const ballCenter = isMobile ? [-2, 0, -2.2] : [0, 0, 0];
   useEffect(() => {
-    // Add a listener for changes to the screen size
     const mediaQuery = window.matchMedia("(max-width: 500px)");
 
-    // Set the initial value of the `isMobile` state variable
     setIsMobile(mediaQuery.matches);
 
-    // Define a callback function to handle changes to the media query
     const handleMediaQueryChange = (event) => {
       setIsMobile(event.matches);
     };
 
-    // Add the callback function as a listener for changes to the media query
     mediaQuery.addEventListener("change", handleMediaQueryChange);
 
-    // Remove the listener when the component is unmounted
     return () => {
       mediaQuery.removeEventListener("change", handleMediaQueryChange);
     };
@@ -65,7 +60,7 @@ const CoolballCanvas = ({ autoRotateSpeed }) => {
       shadows
       dpr={[1, 2]}
       camera={{ position: [20, 6, 18], fov: 25 }}
-      gl={{ preserveDrawingBuffer: true }}
+    // gl={{ preserveDrawingBuffer: true }}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
@@ -75,6 +70,7 @@ const CoolballCanvas = ({ autoRotateSpeed }) => {
           enableZoom={false}
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
+          enableRotate={false}
         />
         <Coolball isMobile={isMobile} />
       </Suspense>

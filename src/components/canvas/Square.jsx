@@ -1,57 +1,75 @@
 import React, { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
-import {
-    Float,
-    OrbitControls,
-    Preload,
-    useTexture,
-} from "@react-three/drei";
-
+import { Float, OrbitControls, Preload, useTexture } from "@react-three/drei";
 import CanvasLoader from "./Loader";
+import { technologies } from "../../constants";
 
 
+const generateSquaresPositions = (numSquares, spacing) => {
+    const squarePositions = [];
+
+    const radius = numSquares * spacing * Math.sqrt(2) / (2 * Math.PI);
+    const phi = (Math.PI * (3 - Math.sqrt(5))) * 2;
+
+    for (let i = 0; i < numSquares; i++) {
+        const y = 1 - (i / (numSquares - 1)) * 2;
+        const radiusY = Math.sqrt(1 - y * y);
+        const theta = phi * i;
+
+        const x = Math.cos(theta) * radiusY * radius;
+        const z = Math.sin(theta) * radiusY * radius;
+
+        squarePositions.push([x, y * radius, z]);
+    }
+
+    return squarePositions;
+};
 
 
-const Square = (props) => {
-    const [decal] = useTexture([props.imgUrl]);
+const Square = ({ imgUrl, position }) => {
+    const [decal] = useTexture([imgUrl]);
 
     return (
-        <Float speed={1.75} floatIntensity={5}>
-            <ambientLight intensity={.6} />
-            <directionalLight position={[10, 10, 0.15]} />
-            <mesh scale={3.5}>
-                {/* <circleBufferGeometry args={[1, 1]} /> */}
+        <Float speed={4} floatIntensity={8}>
+            <mesh position={position} rotation={[0.4, 0.2, 0]}>
                 <boxBufferGeometry args={[1, 1, 1]} />
                 <meshStandardMaterial
                     attach="material"
                     map={decal}
-                    // color="#fafafa"
-                    polygonOffset
-                    polygonOffsetFactor={-5}
-                    flatShading
-
+                    color="#ffffff" // Set the material color to white
                 />
             </mesh>
-        </Float >
+        </Float>
     );
 };
 
-const SquareCanvas = ({ icon }) => {
+const Tech = () => {
+    const numSquares = technologies.length;
+    const spacing = 1.4;
+    const squarePositions = generateSquaresPositions(numSquares, spacing);
+
     return (
-
         <Canvas
-            frameloop='demand'
-            dpr={[2, 2]}
-            gl={{ preserveDrawingBuffer: true }}
+            frameloop="demand"
+            dpr={[window.devicePixelRatio, window.devicePixelRatio]}
+            style={{ width: "100%", height: "100%" }}
+            camera={{ position: [0, 0, 12] }}
         >
+            <ambientLight intensity={0.5} /> {/* Add ambient light */}
+            <directionalLight intensity={0.8} position={[5, 5, 5]} /> {/* Add directional light */}
             <Suspense fallback={<CanvasLoader />}>
-                <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={1.2} />
-                <Square imgUrl={icon} />
+                <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={2.2} maxPolarAngle={Math.PI / 2} />
+                {technologies.map((technology, index) => (
+                    <Square
+                        imgUrl={technology.icon}
+                        position={squarePositions[index % squarePositions.length]}
+                        key={technology.name}
+                    />
+                ))}
             </Suspense>
-
             <Preload all />
         </Canvas>
     );
 };
 
-export default SquareCanvas;
+export default Tech;

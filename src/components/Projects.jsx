@@ -1,5 +1,4 @@
 import React from "react";
-// import Tilt from "react-tilt";
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
@@ -15,51 +14,49 @@ const ProjectCard = ({
   tags,
   image,
   source_code_link,
+  project_link
 }) => {
   return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.3, .75)}>
-      <div
-
-        className='bg-tertiary p-4 rounded-2xl sm:w-[360px] w-full'
-      >
-        <div className='relative w-full h-[200px]'>
+    <motion.div variants={fadeIn("up", "spring", index * 0.3, 0.75)}>
+      <div className="bg-tertiary p-4 rounded-2xl sm:w-[360px] w-full h-full flex flex-col">
+        <div className="relative flex-1">
           <img
             src={image}
-            alt='project_image'
-            className='w-full h-full object-cover rounded-2xl'
+            alt="project_image"
+            className="w-full h-full object-cover rounded-2xl"
           />
 
-          <div className='absolute inset-0 flex justify-end m-3 card-img_hover'>
+          <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
             <div
               onClick={() => window.open(source_code_link, "_blank")}
-              className='black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'
+              className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
             >
               <img
                 src={github}
-                alt='source code'
-                className='w-1/2 h-1/2 object-contain'
+                alt="source code"
+                className="w-1/2 h-1/2 object-contain"
               />
             </div>
           </div>
         </div>
 
-        <div className='mt-5'>
-          <h3 className='text-white font-bold text-[24px]'>{name}</h3>
-          <p className='mt-2 text-secondary text-[14px]'>{description}</p>
-        </div>
+        <div className="flex flex-col flex-1">
+          <a href={project_link}>
 
-        <div className='mt-4 flex flex-wrap gap-2'>
-          {tags.map((tag) => (
-            <div className={`${tag.color} rounded p-1`} key={`${name}-${tag.name}`} >
+            <h3 className="text-white font-bold text-[24px]">{name}</h3>
+          </a>
+          <p className="mt-2 text-secondary text-[14px] flex-1">{description}</p>
 
-              <p
-
-                className={`text-[10px] bg-${tag.color}`}
+          <div className="mt-4 flex flex-wrap gap-2">
+            {tags.map((tag) => (
+              <div
+                className={`${tag.color} rounded p-1`}
+                key={`${name}-${tag.name}`}
               >
-                #{tag.name}
-              </p>
-            </div>
-          ))}
+                <p className={`text-[10px] bg-${tag.color}`}>#{tag.name}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </motion.div>
@@ -69,12 +66,11 @@ const ProjectCard = ({
 const Projects = () => {
   return (
     <>
-
       <motion.div variants={textVariant()}>
         <h2 className={`${styles.sectionHeadText}`}>Meus Projetos</h2>
       </motion.div>
 
-      <div className='mt-20 flex gap-7 flex-wrap'>
+      <div className="mt-20 flex gap-7 flex-wrap">
         {projects.map((project, index) => (
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}
