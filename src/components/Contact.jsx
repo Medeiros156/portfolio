@@ -38,8 +38,8 @@ const Contact = () => {
 
     emailjs
       .send(
-        emailjsConfig.serviceId, // Use the serviceId from emailjsConfig
-        emailjsConfig.templateId, // Use the templateId from emailjsConfig
+        emailjsConfig.serviceId,
+        emailjsConfig.templateId,
         {
           from_name: form.name,
           to_name: "Pedro Medeiros",
@@ -47,7 +47,7 @@ const Contact = () => {
           to_email: "arroz108@gmail.com",
           message: form.message,
         },
-        emailjsConfig.publicKey // Use the publicKey from emailjsConfig
+        emailjsConfig.publicKey
       )
       .then(
         () => {

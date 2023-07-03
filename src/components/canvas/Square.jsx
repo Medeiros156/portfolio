@@ -1,9 +1,8 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useMemo } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Float, OrbitControls, Preload, useTexture } from "@react-three/drei";
 import CanvasLoader from "./Loader";
 import { technologies } from "../../constants";
-
 
 const generateSquaresPositions = (numSquares, spacing) => {
     const squarePositions = [];
@@ -25,7 +24,6 @@ const generateSquaresPositions = (numSquares, spacing) => {
     return squarePositions;
 };
 
-
 const Square = ({ imgUrl, position }) => {
     const [decal] = useTexture([imgUrl]);
 
@@ -36,7 +34,7 @@ const Square = ({ imgUrl, position }) => {
                 <meshStandardMaterial
                     attach="material"
                     map={decal}
-                    color="#ffffff" // Set the material color to white
+                    color="#ffffff"
                 />
             </mesh>
         </Float>
@@ -46,7 +44,11 @@ const Square = ({ imgUrl, position }) => {
 const Tech = () => {
     const numSquares = technologies.length;
     const spacing = 1.4;
-    const squarePositions = generateSquaresPositions(numSquares, spacing);
+
+    const squarePositions = useMemo(
+        () => generateSquaresPositions(numSquares, spacing),
+        [numSquares, spacing]
+    );
 
     return (
         <Canvas
@@ -55,10 +57,15 @@ const Tech = () => {
             style={{ width: "100%", height: "100%" }}
             camera={{ position: [0, 0, 12] }}
         >
-            <ambientLight intensity={0.5} /> {/* Add ambient light */}
-            <directionalLight intensity={0.8} position={[5, 5, 5]} /> {/* Add directional light */}
+            <ambientLight intensity={0.5} />
+            <directionalLight intensity={0.8} position={[5, 5, 5]} />
             <Suspense fallback={<CanvasLoader />}>
-                <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={2.2} maxPolarAngle={Math.PI / 2} />
+                <OrbitControls
+                    enableZoom={false}
+                    autoRotate
+                    autoRotateSpeed={2.2}
+                    maxPolarAngle={Math.PI / 2}
+                />
                 {technologies.map((technology, index) => (
                     <Square
                         imgUrl={technology.icon}

@@ -7,19 +7,7 @@ import { AboutWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 
 import Tech from "./canvas/Square";
-// import { technologies } from "./constants";
 
-// const Tech = () => {
-//   return (
-//     <div className='flex flex-row flex-wrap justify-center gap-8'>
-//       {technologies.map((technology) => (
-//         <div className="w-28 h-28 p-2 flex items-center justify-center" key={technology.name}>
-//           <SquareCanvas icon={technology.icon} />
-//         </div>
-//       ))}
-//     </div>
-//   );
-// };
 
 
 
@@ -29,7 +17,7 @@ const About = () => {
     <>
       <div className="flex flex-row sm:gap-16 relative">
         <div className="sm:flex-1 flex items-center justify-center">
-          <div className="absolute left-0 sm:-left-56 sm:w-3/4 -z-10 h-screen overflow-visible">
+          <div className="absolute left-0 sm:-left-56 sm:w-3/4 -z-10 h-screen w-full overflow-visible">
             <Tech />
 
           </div>
