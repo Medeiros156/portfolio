@@ -1,6 +1,6 @@
 import React, { Suspense, useMemo } from "react";
-import { Canvas } from "@react-three/fiber";
-import { Float, OrbitControls, Preload, useTexture } from "@react-three/drei";
+import { Canvas } from "./canvasImport";
+import { Float, OrbitControls, Preload, useTexture } from "./canvasImport";
 import CanvasLoader from "./Loader";
 import { technologies } from "../../constants";
 
@@ -52,6 +52,7 @@ const Tech = () => {
 
     return (
         <Canvas
+            antialias={0}
             frameloop="demand"
             dpr={[window.devicePixelRatio, window.devicePixelRatio]}
             style={{ width: "100%", height: "100%" }}

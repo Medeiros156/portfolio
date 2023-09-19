@@ -51,13 +51,13 @@ const Hero = () => {
         </a>
       </div>
       <div className='absolute bottom-10 w-full flex justify-center items-center sm:justify-end sm:bottom-36 sm:right-[15%] gap-16'>
-        <a href="./Pedro-Medeiros-CV.pdf" download="Pedro-Medeiros-CV.pdf">
-          <div className='rounded border-4 border-secondary flex justify-center items-center px-8 py-2'>
+        <a href="./Pedro_Medeiros_CV.pdf" download="Pedro-Medeiros-CV.pdf">
+          <div className='rounded border-4 border-secondary flex justify-center items-center px-8 py-2 hover:scale-110'>
             Download CV
           </div>
         </a>
         <a href="https://www.linkedin.com/in/pedro-lima-medeiros/">
-          <img src={linkedin} alt="" className="h-12 w-12" />
+          <img src={linkedin} alt="" className="hover:scale-110 h-12 w-12" />
         </a>
       </div>
     </section>

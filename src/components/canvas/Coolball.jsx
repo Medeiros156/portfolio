@@ -1,6 +1,6 @@
-import React, { Suspense, useEffect, useState } from "react";
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
+import { Suspense, useEffect, useState } from "react";
+import { Canvas } from "./canvasImport";
+import { OrbitControls, Preload, useGLTF } from "./canvasImport";
 
 import CanvasLoader from "./Loader";
 
@@ -55,6 +55,7 @@ const CoolballCanvas = ({ autoRotateSpeed }) => {
       shadows
       dpr={[1, 2]}
       camera={{ position: [20, 6, 18], fov: 25 }}
+      antialias={0}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls

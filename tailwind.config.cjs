@@ -4,10 +4,13 @@ module.exports = {
   mode: "jit",
   theme: {
     extend: {
+      scale: {
+        102: "1.02",
+      },
       colors: {
         primary: "#080708e3",
         secondary: "#aaa6c3",
-        tertiary: "#151030",
+        tertiary: "#15103099",
         "black-100": "#030203f2",
         "black-200": "#090325",
         "white-100": "#f3f3f3",
@@ -19,7 +22,7 @@ module.exports = {
         xs: "450px",
       },
       backgroundImage: {
-        "hero-pattern": "url('/src/assets/bg1.jpg')",
+        "hero-pattern": "url('/src/assets/bg1.webp')",
         "works-pattern": "url('/src/assets/bg2.webp')",
       },
     },
