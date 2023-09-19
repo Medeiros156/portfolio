@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 
 import { styles } from "../styles";
-import { CoolballCanvas, StarsCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 import { emailjsConfig } from "../constants/index";
@@ -126,6 +125,11 @@ const Contact = () => {
             {loading ? "Enviando..." : "Enviar"}
           </button>
         </form>
+      </motion.div>
+
+      <motion.div>
+        <img src="./contact.png
+" alt="" />
       </motion.div>
 
       {/* <motion.div
